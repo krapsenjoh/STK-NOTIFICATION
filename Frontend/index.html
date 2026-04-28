@@ -5,7 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stk - push notification</title>
 </head>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+}
+
+form {
+  background: white;
+  padding: 35px;
+  width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+h3 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #1e3c72;
+  letter-spacing: 2px;
+}
+
+form div {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #2a5298;
+  box-shadow: 0 0 8px rgba(42,82,152,0.3);
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  background: #2a5298;
+  color: white;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1e3c72;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+</style>
 <body>
+    <h3>KRAP WEBSITES</h3>
     <form>
         <div>
             <label for="phone-number">Phone number</label>
