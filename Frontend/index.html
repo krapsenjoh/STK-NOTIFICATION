@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stk - push notification</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label for="phone-number">Phone number</label>
+            <input type="number" name="phone-number" id="phone-number">
+        </div>
+        <div>
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="amount">
+        </div>
+        <button type="submit">Prompt</button>
+    </form>
+</body>
+
+<script>
+const API_URL = "http://localhost:3000" //Base url
+
+const form = document.querySelector("form")
+
+form.addEventListener("submit",(e)=>{
+    e.preventDefault()
+    const number = document.querySelector("#phone-number")
+    const amount = document.querySelector("#amount")
+
+    const payload = {
+        phone:number.value,
+        amount:amount.value
+    }
+    sendStk(payload)
+})
+
+
+async function sendStk(payload) {
+
+try {
+    const res = await fetch(`${API_URL}/stk-push`,{
+        method:"POST",
+        headers:{
+            "Content-Type": "application/json" 
+        },
+        body:JSON.stringify(payload)
+    })
+    const data = await res.json()
+    alert(data.data.message)
+    clearFields()
+} catch (error) {
+  console.log(error)  
+}
+    
+}
+
+function clearFields(){
+     const number = document.querySelector("#phone-number")
+    const amount = document.querySelector("#amount")
+    number.value = ""
+    amount.value = ""
+}
+
+</script>
+</html>
